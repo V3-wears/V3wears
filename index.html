@@ -8,7 +8,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background-color: black;
+      background: black;
       color: white;
     }
 
@@ -19,46 +19,28 @@
       border-bottom: 1px solid #222;
     }
 
-    .logo {
-      font-size: 24px;
-      font-weight: bold;
-    }
+    .logo { font-size: 22px; font-weight: bold; }
 
     nav a {
       color: white;
-      margin-left: 20px;
+      margin-left: 15px;
       text-decoration: none;
       font-size: 14px;
     }
 
     .hero {
       height: 90vh;
+      background: url('https://images.unsplash.com/photo-1520975922323-9c09d7c8f9f7') center/cover;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 50px;
-      margin: 0;
-    }
-
-    .hero p {
-      max-width: 500px;
-      margin-top: 15px;
-      font-size: 16px;
-      color: #aaa;
-    }
-
-    .btn {
-      margin-top: 25px;
-      padding: 12px 25px;
-      border: 1px solid white;
-      background: none;
-      color: white;
-      cursor: pointer;
+      font-size: 45px;
+      background: rgba(0,0,0,0.6);
+      padding: 20px;
     }
 
     .section {
@@ -75,7 +57,20 @@
 
     .card {
       border: 1px solid #222;
-      padding: 20px;
+      padding: 10px;
+    }
+
+    .card img {
+      width: 100%;
+    }
+
+    .btn {
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px solid white;
+      background: none;
+      color: white;
+      cursor: pointer;
     }
 
     footer {
@@ -83,7 +78,6 @@
       padding: 20px;
       border-top: 1px solid #222;
       font-size: 12px;
-      color: #777;
     }
   </style>
 </head>
@@ -94,36 +88,60 @@
   <div class="logo">V3 WEAR</div>
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
+    <a href="#shop">Shop</a>
+    <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
   <h1>I CAME. I SAW. I CONQUERED.</h1>
-  <p>Bold streetwear built for ambition, confidence, and self-expression.</p>
-  <button class="btn">SHOP NOW</button>
 </section>
 
-<section class="section">
-  <h2>Featured Pieces</h2>
+<section class="section" id="shop">
+  <h2>Shop</h2>
+
   <div class="products">
-    <div class="card">T-Shirt 1</div>
-    <div class="card">Hoodie 1</div>
-    <div class="card">Cap 1</div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
+      <p>T-Shirt</p>
+      <button class="btn" onclick="order('T-Shirt')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+      <p>Hoodie</p>
+      <button class="btn" onclick="order('Hoodie')">Order</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+      <p>Cap</p>
+      <button class="btn" onclick="order('Cap')">Order</button>
+    </div>
+
   </div>
 </section>
 
-<section class="section">
-  <h2>About V3 Wear</h2>
+<section class="section" id="contact">
+  <h2>Contact</h2>
   <p>
-    V3 Wear blends bold design with urban culture. More than fashion — it's a statement.
+    <a href="https://wa.me/+44 7308 970610" target="_blank">WhatsApp</a> |
+    <a href="https://instagram.com/YOURUSERNAME" target="_blank">Instagram</a>
   </p>
 </section>
 
 <footer>
-  © 2026 V3 Wear. All rights reserved.
+  © 2026 V3 Wear
 </footer>
+
+<script>
+function order(item){
+  let phone = "+44 7308 970610";
+  let message = "Hello, I want to order " + item + " from V3 Wear";
+  window.open("https://wa.me/" + phone + "?text=" + encodeURIComponent(message));
+}
+</script>
 
 </body>
 </html>
